@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import Foundation
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -24,7 +25,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene(named: "art.scnassets/MoonScene.scn")!
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -50,6 +51,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
+    }
+    
+    // MARK: - Gesture Recognizers
+    
+    var deathStar = false
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let scene = sceneView.scene
+        if let node = scene.rootNode.childNode(withName: "sphere", recursively: true) {
+            print("node found \(node)")
+            let imageName = deathStar == true ? "Moon" : "Death-Star-v2"
+            if let sphere = node.geometry as? SCNSphere {
+                print("sphere found \(imageName) \(sphere)")
+                deathStar = !deathStar
+                sphere.firstMaterial?.diffuse.contents = UIImage.init(named: imageName)
+            }
+        }
     }
 
     // MARK: - ARSCNViewDelegate

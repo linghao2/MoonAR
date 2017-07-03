@@ -37,6 +37,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE135BEB1F09A42D00D45CE7 /* Moon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Moon;
+			sourceTree = "<group>";
+		};
 		CE9982461F085A8D00DCC3F2 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +63,7 @@
 		CE9982511F085A8D00DCC3F2 /* MoonAR */ = {
 			isa = PBXGroup;
 			children = (
+				CE135BEB1F09A42D00D45CE7 /* Moon */,
 				CE9982521F085A8D00DCC3F2 /* AppDelegate.swift */,
 				CE9982541F085A8D00DCC3F2 /* art.scnassets */,
 				CE9982561F085A8D00DCC3F2 /* ViewController.swift */,
@@ -99,6 +107,7 @@
 				TargetAttributes = {
 					CE99824E1F085A8D00DCC3F2 = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -273,10 +282,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62RFK2LF2M;
 				INFOPLIST_FILE = MoonAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluebambosa.MoonAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,10 +299,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62RFK2LF2M;
 				INFOPLIST_FILE = MoonAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluebambosa.MoonAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,6 +331,7 @@
 				CE9982651F085A8D00DCC3F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
